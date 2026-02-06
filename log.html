@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>
+            <h1>VOTING SYSTEM MANAGEMENT</h1>
+        </title>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    
+<body>
+
+<div class="container">
+    <form id="loginForm" action="#" method="post">
+        <h2>Login</h2>
+
+        <label for="loginVoterId">Voter ID</label>
+        <input type="text" id="loginVoterId" name="voterId" required>
+
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" name="password" required>
+
+        <button type="submit">Login</button>
+
+        <div class="switch" onclick="showSignup()">Create New Account</div>
+    </form>
+    <form id="signupForm" class="hidden" action="#" method="post">
+        <h2>Sign Up</h2>
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="fullname" required>
+
+        <label for="voterId">Voter ID</label>
+        <input type="text" id="voterId" name="voterId" required>
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone"
+               pattern="[0-9]{10}" placeholder="10-digit number" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm">Confirm Password</label>
+        <input type="password" id="confirm" name="confirmPassword" required>
+
+        <button type="submit">Create Account</button>
+
+        <div class="switch" onclick="showLogin()">Already have an account?</div>
+    </form>
+
+</div>
+
+<script>
+    function showSignup() {
+        document.getElementById("loginForm").classList.add("hidden");
+        document.getElementById("signupForm").classList.remove("hidden");
+    }
+
+    function showLogin() {
+        document.getElementById("signupForm").classList.add("hidden");
+        document.getElementById("loginForm").classList.remove("hidden");
+    }
+</script>
+
+</body>
+</html>
+        
