@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login / Sign Up</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+    }
+
+    .container {
+        width: 350px;
+        margin: 80px auto;
+        padding: 20px;
+        background: white;
+        border: 1px solid #ccc;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    input {
+        width: 100%;
+        padding: 6px;
+        margin-top: 4px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 15px;
+        padding: 8px;
+    }
+
+    .switch {
+        text-align: center;
+        margin-top: 10px;
+        cursor: pointer;
+        color: blue;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm">
+        <h2>Login</h2>
+
+        <label>Voter ID</label>
+        <input type="text" required>
+
+        <label>Password</label>
+        <input type="password" required>
+
+        <button type="submit">Login</button>
+
+        <div class="switch" onclick="showSignup()">Create New Account</div>
+    </form>
+
+    <!-- SIGN UP FORM -->
+    <form id="signupForm" class="hidden">
+        <h2>Sign Up</h2>
+
+        <label>Full Name</label>
+        <input type="text" required>
+
+        <label>Voter ID</label>
+        <input type="text" required>
+
+        <label>Date of Birth</label>
+        <input type="date" required>
+
+        <label>Phone Number</label>
+        <input type="tel" pattern="[0-9]{10}" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Password</label>
+        <input type="password" required>
+
+        <label>Confirm Password</label>
+        <input type="password" required>
+
+        <button type="submit">Create Account</button>
+
+        <div class="switch" onclick="showLogin()">Already have an account?</div>
+    </form>
+
+</div>
+
+<script>
+    function showSignup() {
+        document.getElementById("loginForm").classList.add("hidden");
+        document.getElementById("signupForm").classList.remove("hidden");
+    }
+
+    function showLogin() {
+        document.getElementById("signupForm").classList.add("hidden");
+        document.getElementById("loginForm").classList.remove("hidden");
+    }
+</script>
+
+</body>
+</html>
